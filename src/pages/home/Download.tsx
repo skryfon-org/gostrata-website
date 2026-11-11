@@ -7,7 +7,7 @@ import { track } from '../../lib/track'
 import { REPO, SETUP_FILES, SETUP_REPO, VERSION } from '../../lib/site'
 
 const platforms: { os: OS; name: string; note: string }[] = [
-  { os: 'linux', name: 'Linux', note: 'Make it executable first: chmod +x goclean-setup-linux.AppImage' },
+  { os: 'linux', name: 'Linux', note: 'Make it executable first: chmod +x gostrata-setup-linux.AppImage' },
   { os: 'windows', name: 'Windows', note: 'Windows may show a SmartScreen warning because the app is not code-signed. Click More info, then Run anyway.' },
   { os: 'darwin', name: 'macOS', note: 'macOS may block the app because it is not code-signed. Right-click it, choose Open, then confirm.' },
 ]
@@ -25,7 +25,7 @@ export function Download() {
   useEffect(() => setMine(detectOS()), [])
 
   return (
-    <Section id="download" eyebrow="Download" title="Install goclean on any platform." intro={`Version ${VERSION}. Download goclean Setup and it installs Go and goclean for you.`}>
+    <Section id="download" eyebrow="Download" title="Install gostrata on any platform." intro={`${VERSION ? `Version ${VERSION}. ` : ''}Download gostrata Setup and it installs Go and gostrata for you.`}>
       <div className="grid gap-px overflow-hidden rounded-md border border-line bg-line lg:grid-cols-3">
         {platforms.map((p, i) => (
           <Reveal key={p.os} delay={i * 80} className="h-full bg-bg">
@@ -41,7 +41,7 @@ export function Download() {
                 className="mt-2 inline-flex w-fit items-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-[#04101c] transition hover:opacity-90"
               >
                 <DownloadIcon size={15} aria-hidden="true" />
-                Download goclean Setup
+                Download gostrata Setup
                 <span className="sr-only"> for {p.name}</span>
               </a>
               <p className="mt-3 text-xs leading-relaxed text-muted">{p.note}</p>

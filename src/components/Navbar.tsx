@@ -34,7 +34,7 @@ export function Navbar() {
   return (
     <header className={`sticky top-0 z-50 transform-gpu border-b transition-colors ${scrolled || open ? 'border-line bg-bg/85 backdrop-blur-md' : 'border-transparent bg-transparent'}`}>
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-5 lg:px-3 xl:gap-4 xl:px-5">
-        <Link to="/" aria-label="goclean home" className="mr-2 shrink-0"><Logo /></Link>
+        <Link to="/" aria-label="gostrata home" className="mr-2 shrink-0"><Logo /></Link>
         <ul className="hidden items-center lg:flex">
           {links.map((l) => (
             <li key={l.label}>
@@ -49,7 +49,7 @@ export function Navbar() {
           ))}
           <li><a href={REPO} target="_blank" rel="noreferrer" className={linkCls}>GitHub</a></li>
         </ul>
-        <span className="hidden rounded border border-line px-2 py-0.5 font-mono text-xs text-muted xl:inline">{VERSION}</span>
+        {VERSION && <span className="hidden rounded border border-line px-2 py-0.5 font-mono text-xs text-muted xl:inline">{VERSION}</span>}
 
         <div className="ml-auto hidden shrink-0 items-center gap-2 lg:flex">
           <ThemeToggle />
@@ -74,7 +74,7 @@ export function Navbar() {
           </ul>
           <div className="mt-3 flex items-center gap-3">
             <Link to="/docs/quick-start" className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-[#04101c]">Get Started</Link>
-            <span className="rounded border border-line px-2 py-0.5 font-mono text-xs text-muted">{VERSION}</span>
+            {VERSION && <span className="rounded border border-line px-2 py-0.5 font-mono text-xs text-muted">{VERSION}</span>}
           </div>
         </div>
       )}

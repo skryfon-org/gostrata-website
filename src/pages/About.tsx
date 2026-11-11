@@ -4,21 +4,20 @@ import type { LucideIcon } from 'lucide-react'
 import { usePageTitle } from '../lib/hooks'
 import { Section } from '../components/Section'
 import { Reveal } from '../components/Reveal'
-import { PKG, REPO, VERSION } from '../lib/site'
+import { PKG, REPO } from '../lib/site'
 import { ABOUT_DESC } from '../lib/routes'
 
 const principles: { icon: LucideIcon; title: string; body: string }[] = [
   { icon: Layers, title: 'Structure first', body: 'Folder layout and dependency direction are decided on day one, so the codebase stays readable as it grows.' },
   { icon: Compass, title: 'Sensible defaults', body: 'Gin or Chi, PostgreSQL, MySQL or SQLite, GORM, Viper and Zerolog come pre-wired. Swap them without fighting the layout.' },
   { icon: Sparkles, title: 'Less boilerplate', body: 'One command generates an entity, DTOs, repository, usecase, handler, migration and routes.' },
-  { icon: Scale, title: 'Open and permissive', body: 'goclean is MIT licensed. Read it, fork it, and send improvements back.' },
+  { icon: Scale, title: 'Open and permissive', body: 'gostrata is MIT licensed. Read it, fork it, and send improvements back.' },
 ]
 
 const stats = [
   { label: 'Language', value: 'Go' },
   { label: 'Architecture', value: 'Clean' },
   { label: 'License', value: 'MIT' },
-  { label: 'Version', value: VERSION },
 ]
 
 export default function About() {
@@ -32,7 +31,7 @@ export default function About() {
             Start clean. Build faster. Ship better.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
-            goclean is a command-line tool that scaffolds structured, maintainable Go backend applications using Clean Architecture. This site is its documentation, packaged as a desktop-friendly web app.
+            gostrata is a command-line tool that scaffolds structured, maintainable Go backend applications using Clean Architecture. This site is its documentation, packaged as a desktop-friendly web app.
           </p>
         </Reveal>
         <dl className="mt-12 grid grid-cols-2 border-l border-t border-line sm:grid-cols-4">
@@ -45,7 +44,7 @@ export default function About() {
         </dl>
       </header>
 
-      <Section eyebrow="Why goclean" title="Every Go service starts with the same decisions." intro="Where do handlers live? How do repositories get injected? Where does configuration go? goclean answers these once, consistently, so you spend your time on the product instead of the plumbing.">
+      <Section eyebrow="Why gostrata" title="Every Go service starts with the same decisions." intro="Where do handlers live? How do repositories get injected? Where does configuration go? gostrata answers these once, consistently, so you spend your time on the product instead of the plumbing.">
         <ul className="grid border-l border-t border-line sm:grid-cols-2">
           {principles.map((p, i) => (
             <li key={p.title} className="border-b border-r border-line">
@@ -59,14 +58,14 @@ export default function About() {
         </ul>
       </Section>
 
-      <Section eyebrow="Open source" title="Built in the open." intro="goclean is developed on GitHub. Issues, ideas and pull requests are welcome." tint>
+      <Section eyebrow="Open source" title="Built in the open." intro="gostrata is developed on GitHub. Issues, ideas and pull requests are welcome." tint>
         <div className="flex flex-wrap gap-3">
           <a href={REPO} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-medium text-[#04101c] transition hover:opacity-90"><Code2 size={16} /> View on GitHub</a>
           <Link to="/docs/introduction" className="inline-flex items-center gap-2 rounded-md border border-line px-5 py-3 text-sm font-medium text-fg transition hover:bg-surface">Read the docs <ArrowRight size={16} /></Link>
         </div>
         <p className="mt-8 text-sm text-muted">
           Go package reference:{' '}
-          <a href={PKG} target="_blank" rel="noreferrer" className="font-mono text-accent underline-offset-4 hover:underline">pkg.go.dev/github.com/ebinskryfon/goclean</a>
+          <a href={PKG} target="_blank" rel="noreferrer" className="font-mono text-accent underline-offset-4 hover:underline">pkg.go.dev/github.com/skryfon-org/gostrata</a>
         </p>
       </Section>
     </>

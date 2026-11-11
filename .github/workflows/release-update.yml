@@ -1,7 +1,7 @@
 name: Update site for new release
 on:
   repository_dispatch:
-    types: [goclean-release]
+    types: [gostrata-release]
   workflow_dispatch:
     inputs:
       tag: { description: 'Release tag, e.g. v1.2.0', required: true }
@@ -20,7 +20,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view "${{ inputs.tag }}" -R ebinskryfon/goclean --json tagName,publishedAt,body > release.json
+          gh release view "${{ inputs.tag }}" -R skryfon-org/gostrata --json tagName,publishedAt,body > release.json
           echo "TAG=$(jq -r .tagName release.json)" >> "$GITHUB_ENV"
           echo "DATE=$(jq -r '.publishedAt[:10]' release.json)" >> "$GITHUB_ENV"
           { echo 'BODY<<EOF_BODY'; jq -r .body release.json; echo 'EOF_BODY'; } >> "$GITHUB_ENV"
@@ -40,9 +40,9 @@ jobs:
         with:
           branch: release/${{ env.TAG }}
           title: Update site for ${{ env.TAG }}
-          commit-message: Update site for goclean ${{ env.TAG }}
+          commit-message: Update site for gostrata ${{ env.TAG }}
           body: |
-            Automated update for goclean ${{ env.TAG }}.
+            Automated update for gostrata ${{ env.TAG }}.
 
             Before merging:
             - [ ] Replace the `TODO` summary in `src/pages/Changelog.tsx`.

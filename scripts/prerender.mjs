@@ -52,7 +52,7 @@ for (const r of routes) {
 // 404 fallback for hosts that serve /404.html (GitHub Pages, Cloudflare Pages).
 const notFound = build({
   url: '/__not-found',
-  title: 'Page not found — goclean',
+  title: 'Page not found — gostrata',
   description: DEFAULT_404_DESC(),
   robots: 'noindex, follow',
 })

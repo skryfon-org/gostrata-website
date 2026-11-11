@@ -8,34 +8,6 @@ type Release = { version: string; date: string; summary: string; changes: { type
 
 // Newest first. Mirrors the published GitHub releases.
 const releases: Release[] = [
-  {
-    version: 'v1.2.0',
-    date: '2026-11-04',
-    summary: 'Generated projects now ship with a Dockerfile, and goclean gains install scripts.',
-    changes: [
-      { type: 'feat', text: 'New projects include a Dockerfile and .dockerignore.' },
-      { type: 'feat', text: 'Install scripts for Linux/macOS (install.sh) and Windows (install.ps1).' },
-      { type: 'fix', text: 'Generated Go files are now gofmt-formatted before being written.' },
-      { type: 'fix', text: 'Hardened the generated Dockerfile: go.sum handling, SQLite data directory and image tag.' },
-    ],
-  },
-  {
-    version: 'v1.1.1',
-    date: '2026-11-02',
-    summary: 'Patch release following v1.1.0.',
-    changes: [],
-  },
-  {
-    version: 'v1.1.0',
-    date: '2026-11-02',
-    summary: 'Interactive stack selection, field-aware generators and a dedicated types layer.',
-    changes: [
-      { type: 'feat', text: 'Types layer for request, input and response DTOs.' },
-      { type: 'feat', text: 'Field-aware generators, auto-registration, database and router choice, and release tooling.' },
-      { type: 'feat', text: 'Interactive stack wizard and an --orm flag.' },
-      { type: 'fix', text: 'Addressed review findings in the stack wizard.' },
-    ],
-  },
 ]
 
 const badge = {
@@ -50,12 +22,16 @@ export default function Changelog() {
     <main className="mx-auto max-w-4xl px-5 pb-24 pt-20">
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Changelog</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-fg sm:text-5xl">What's new in goclean.</h1>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight text-fg sm:text-5xl">What's new in gostrata.</h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
           Every release, newest first. Full notes live on{' '}
           <a href={`${REPO}/releases`} target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">GitHub Releases</a>.
         </p>
       </Reveal>
+
+      {releases.length === 0 && (
+        <p className="mt-14 text-sm text-muted">No versioned releases yet.</p>
+      )}
 
       <ol className="mt-14 border-l border-line">
         {releases.map((r) => (

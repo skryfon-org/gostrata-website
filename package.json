@@ -1,5 +1,5 @@
 {
-  "name": "goclean-desktop",
+  "name": "gostrata-website",
   "private": true,
   "version": "1.1.1",
   "type": "module",
@@ -26,10 +26,10 @@
     "typescript": "~7.0.2",
     "vite": "^8.3.5"
   },
-  "description": "goclean — documentation and website, as a desktop app",
+  "description": "gostrata — documentation and website, as a desktop app",
   "author": {
     "name": "ebinskryfon",
     "email": "skryfon@gmail.com"
   },
-  "homepage": "https://github.com/ebinskryfon/goclean"
+  "homepage": "https://github.com/skryfon-org/gostrata"
 }

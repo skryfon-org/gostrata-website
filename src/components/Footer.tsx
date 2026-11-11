@@ -30,7 +30,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm text-muted">
             <li><a className={a} href={`${REPO}/blob/main/LICENSE`} target="_blank" rel="noreferrer">MIT License</a></li>
             <li><Link className={a} to="/privacy">Privacy</Link></li>
-            <li>Version <span className="font-mono">{VERSION}</span></li>
+            {VERSION && <li>Version <span className="font-mono">{VERSION}</span></li>}
           </ul>
         </div>
       </div>

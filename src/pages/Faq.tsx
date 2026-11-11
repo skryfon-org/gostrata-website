@@ -16,7 +16,7 @@ export default function Faq() {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">FAQ</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-fg sm:text-5xl">Frequently asked questions</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
-            Quick answers about installing goclean, the stack it generates and how it fits into your workflow.
+            Quick answers about installing gostrata, the stack it generates and how it fits into your workflow.
           </p>
         </Reveal>
       </header>

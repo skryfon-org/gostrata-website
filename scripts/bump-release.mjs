@@ -1,4 +1,4 @@
-// Bumps the site to a new goclean release.
+// Bumps the site to a new gostrata release.
 // Usage: TAG=v1.2.0 DATE=2026-11-04 BODY="<release notes>" node scripts/bump-release.mjs
 import { readFileSync, writeFileSync } from 'node:fs'
 
